@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:GestureCheckSample.Controls"
+             x:Class="GestureCheckSample.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+              <BoxView Color="Yellow" HeightRequest="100" WidthRequest="200">
+                <BoxView.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Left"
+                                            Swiped="SwipeGestureRecognizer_SwipedLeft" />
+
+                    <SwipeGestureRecognizer Direction="Right"
+                                            Swiped="SwipeGestureRecognizer_SwipeRight" />
+                    
+                    <SwipeGestureRecognizer Direction="Up"
+                                            Swiped="SwipeGestureRecognizer_SwipedUp" />
+                    
+                    <SwipeGestureRecognizer Direction="Down"
+                                            Swiped="SwipeGestureRecognizer_SwipedDown" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+
+            <BoxView Color="Fuchsia" HeightRequest="100" WidthRequest="200">
+                <BoxView.GestureRecognizers>
+         
+                   <TapGestureRecognizer Tapped="TapGestureRecognizer_TappedTwice"
+                                         NumberOfTapsRequired="2"/>
+
+                </BoxView.GestureRecognizers>
+            </BoxView>
+
+            <controls:MyBoxControl Source="dotnet_bot.png" HeightRequest="100" WidthRequest="200" />
+              
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
